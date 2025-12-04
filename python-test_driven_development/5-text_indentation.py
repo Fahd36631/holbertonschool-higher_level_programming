@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""Module that defines text_indentation function.
-"""
-
-
+"""Module that defines text_indentation function."""
 def text_indentation(text):
     """Print text with 2 new lines after '.', '?' and ':'.
 
@@ -24,7 +21,6 @@ def text_indentation(text):
         ch = text[i]
 
         if ch in separators:
-    
             line = line.rstrip()
             line += ch
             print(line, end="\n\n")
@@ -45,3 +41,4 @@ def text_indentation(text):
     line = line.strip()
     if line:
         print(line, end="")
+
