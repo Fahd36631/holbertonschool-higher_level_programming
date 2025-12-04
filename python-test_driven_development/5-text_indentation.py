@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Module that defines text_indentation function."""
+"""Module that defines text_indentation function.
+"""
+
+
 def text_indentation(text):
     """Print text with 2 new lines after '.', '?' and ':'.
 
@@ -21,16 +24,19 @@ def text_indentation(text):
         ch = text[i]
 
         if ch in separators:
+            # احذف الفراغات في نهاية السطر قبل العلامة
             line = line.rstrip()
             line += ch
             print(line, end="\n\n")
             line = ""
 
+            # تخطَّ كل الفراغات بعد العلامة
             i += 1
             while i < length and text[i] == " ":
                 i += 1
             continue
 
+        # تجاهل الفراغات في بداية السطر
         if not line and ch == " ":
             i += 1
             continue
@@ -38,7 +44,7 @@ def text_indentation(text):
         line += ch
         i += 1
 
+    # اطبع الباقي إن وجد بدون فراغات في البداية/النهاية
     line = line.strip()
     if line:
         print(line, end="")
-
