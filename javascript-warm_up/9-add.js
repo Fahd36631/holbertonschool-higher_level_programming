@@ -1,5 +1,11 @@
 #!/usr/bin/node
-function add (a, b) {
-    return a + b;
-  }
-  console.log(add(Number(process.argv[2]), Number(process.argv[3])));
+
+const args = process.argv.slice(2);
+
+if (args.length < 2) {
+  console.log(NaN);
+} else {
+  const a = Number(args[0]);
+  const b = Number(args[1]);
+  console.log(a + b);
+}
